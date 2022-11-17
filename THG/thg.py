@@ -53,15 +53,14 @@ class Graph:
         degrees = []
         for node in self.nodes:
             degrees.append(self.get_degree(node))
-        print(degrees)
         odd_number_counter = 0
         for i in degrees:
             if ((i%2) != 0):
                 odd_number_counter +=1
         if (odd_number_counter == 0):
-            return True
+            return True, degrees
         else:
-            return False
+            return False, degrees
 
     def have_aulerian_chain(self):
         degrees = []
@@ -72,9 +71,9 @@ class Graph:
             if ((i%2) != 0):
                 odd_number_counter +=1
         if (odd_number_counter == 2):
-            return True
+            return True, degrees
         else:
-            return False
+            return False, degrees
 
 
 
